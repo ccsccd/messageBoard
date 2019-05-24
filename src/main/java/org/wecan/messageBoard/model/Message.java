@@ -15,10 +15,11 @@ public class Message {
     public Message() {
     }
 
-    public Message(String username, String text, int pid) {
+    public Message(String username, String text, int pid,int userId) {
         this.username = username;
         this.text = text;
         this.pid = pid;
+        this.userId = userId;
     }
 
     public Message(String text, int id) {

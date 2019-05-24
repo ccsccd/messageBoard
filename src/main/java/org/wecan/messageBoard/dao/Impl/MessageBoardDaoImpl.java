@@ -96,11 +96,13 @@ public class MessageBoardDaoImpl implements MessageBoardDao {
     public void updateMessage(Message message) {
         Connection con = JDBCUtil.getConnection();
         PreparedStatement pstmt = null;
-        String sql = "UPDATE message_board SET text = ? WHERE id = ?";
+        String sql = "UPDATE message_board SET text = ?,update_time=? WHERE id = ?";
         try {
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1,message.getText());
-            pstmt.setInt(2, message.getId());
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            pstmt.setString(2, sdf.format(new Date()));
+            pstmt.setInt(3, message.getId());
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
