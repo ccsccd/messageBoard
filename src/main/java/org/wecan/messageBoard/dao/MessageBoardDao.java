@@ -1,6 +1,7 @@
 package org.wecan.messageBoard.dao;
 
 import org.wecan.messageBoard.model.Message;
+import org.wecan.messageBoard.model.User;
 
 import java.util.List;
 
@@ -49,4 +50,28 @@ public interface MessageBoardDao {
      * @return 是否存在
      */
     boolean checkId(int id);
+
+    /**
+     * 插入用户
+     *
+     * @param user 用户
+     */
+    void insertUser(User user);
+
+    /**
+     * 查询邮箱是否已被注册
+     *
+     * @param eMail e-mail
+     * @return 是否已被注册
+     */
+    boolean checkUser(String eMail);
+
+    /**
+     * 登录
+     *
+     * @param eMail,password e-mail,密码
+     * @return 成功返回User类
+     */
+    User checkLogin(String eMail,String password);
+
 }

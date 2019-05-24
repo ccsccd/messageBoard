@@ -3,6 +3,7 @@ package org.wecan.messageBoard.service.impl;
 import org.wecan.messageBoard.dao.Impl.MessageBoardDaoImpl;
 import org.wecan.messageBoard.dao.MessageBoardDao;
 import org.wecan.messageBoard.model.Message;
+import org.wecan.messageBoard.model.User;
 import org.wecan.messageBoard.service.MessageBoardService;
 
 import java.util.List;
@@ -151,5 +152,19 @@ public class MessageBoardServiceImpl implements MessageBoardService {
     public List<Message> findNeededMessages(String content) {
         List<Message> list = messageBoardDao.findMessagesByContent(content);
         return list;
+    }
+
+    @Override
+    public boolean insertUser(User user) {
+        if (messageBoardDao.checkUser(user.geteMail())) {
+                messageBoardDao.insertUser(user);
+                return true;
+        }
+        return false;
+    }
+
+    @Override
+    public User checkLogin(String eMail, String password) {
+        return messageBoardDao.checkLogin(eMail,password);
     }
 }

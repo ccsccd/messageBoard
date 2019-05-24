@@ -1,6 +1,7 @@
 package org.wecan.messageBoard.service;
 
 import org.wecan.messageBoard.model.Message;
+import org.wecan.messageBoard.model.User;
 
 import java.util.List;
 
@@ -59,4 +60,20 @@ public interface MessageBoardService {
      * @return 留言的集合
      */
     List<Message> findNeededMessages(String content);
+
+    /**
+     * 插入用户
+     *
+     * @param user 用户
+     * @return 成功与否
+     */
+    boolean insertUser(User user);
+
+    /**
+     * 登录
+     *
+     * @param eMail,password e-mail,密码
+     * @return 成功返回User类
+     */
+    User checkLogin(String eMail,String password);
 }
