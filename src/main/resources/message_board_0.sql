@@ -11,7 +11,7 @@
  Target Server Version : 50719
  File Encoding         : 65001
 
- Date: 25/05/2019 00:28:32
+ Date: 17/05/2019 23:41:00
 */
 
 SET NAMES utf8mb4;
@@ -26,10 +26,17 @@ CREATE TABLE `message_board`  (
   `username` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `text` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `pid` int(11) NOT NULL,
-  `create_time` datetime(0) NOT NULL,
-  `update_time` datetime(0) DEFAULT NULL,
-  `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of message_board
+-- ----------------------------
+INSERT INTO `message_board` VALUES (1, '李明', '我是第一个', 0);
+INSERT INTO `message_board` VALUES (2, '王刚', '我是第二个', 0);
+INSERT INTO `message_board` VALUES (3, '王刚儿子', '......', 2);
+INSERT INTO `message_board` VALUES (4, '王刚孙子', '......', 3);
+INSERT INTO `message_board` VALUES (5, '孙明', '我我我', 0);
+INSERT INTO `message_board` VALUES (7, '赵光', '啊啊啊', 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
