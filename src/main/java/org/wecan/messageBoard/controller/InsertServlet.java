@@ -14,7 +14,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
-@WebServlet("/insert")
+@WebServlet("/user/insert")
 public class InsertServlet extends HttpServlet {
 
     private static final String ERROR= "{\"status\":\"10001\",\"data\":\"fail!!\"}";

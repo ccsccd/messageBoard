@@ -12,7 +12,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
-@WebServlet("/delete")
+@WebServlet("/user/delete")
 public class DeleteServlet extends HttpServlet {
     private static final String ERROR= "{\"status\":\"10001\",\"data\":\"fail!!\"}";
     private static final String OK="{\"status\":\"10000\",\"data\":\"succeed!!\"}";
