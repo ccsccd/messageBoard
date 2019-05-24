@@ -216,7 +216,7 @@ public class MessageBoardDaoImpl implements MessageBoardDao {
             e.printStackTrace();
         }finally {
             JDBCUtil.close(rs, pstmt, con);
-            return user;
         }
+        return user;
     }
 }

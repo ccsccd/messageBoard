@@ -28,8 +28,6 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        req.setCharacterEncoding("utf-8");
-        resp.setContentType("text/html;charset=utf-8");
 
         String eMail = req.getParameter("e-mail");
         String password = req.getParameter("passowrd");
